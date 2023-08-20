@@ -1,4 +1,4 @@
-# SImple PROTOTYPE WEBSITE
+# Simple PROTOTYPE WEBSITE
 
 # Packages i used:
 * papa parse
