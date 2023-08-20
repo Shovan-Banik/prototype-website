@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { DataContext } from '../../DataProvider/DataProvider';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import Swal from 'sweetalert2';
 
 const Result = () => {
     const { formData } = useContext(DataContext);
@@ -20,6 +21,14 @@ const Result = () => {
             body: [tableData[1]],
         });
         doc.save('data.pdf');
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Download Successful',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
 
     return (

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { DataContext } from '../../DataProvider/DataProvider';
 import Papa from "papaparse";
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Step2Form = () => {
     const { formData, setFormData } = useContext(DataContext);
@@ -28,6 +29,13 @@ const Step2Form = () => {
         const minZ=form.minZ.value;
         const newFormData={...formData,maxX,minX,maxY,minY,maxZ,minZ};
         setFormData(newFormData);
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Step2 Done',
+            showConfirmButton: false,
+            timer: 1500
+          })
         navigate('/result');
     }
 
